@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/bt2.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+        <script>
+            function clickPost(postid){
+                alert(postid + "게시글을 클릭했습니다.");
+            }
+            $(document).ready(function (){
+                $(".fastcampus").click(function () {
+                    let id = $(this).attr("id");
+                    clickPost(id);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="my-table">
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">작성자</th>
+                        <th scope="col">일시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="3" class="fastcampus"> 
+                        <td scope="col">3</td>
+                        <td scope="col">세번째 게시글 입니다.</td>
+                        <td scope="col">이태화</td>
+                        <td scope="col">2022.04.25</td>
+                    </tr>
+                    <tr id="2" class="fastcampus">
+                        <td scope="col">2</td>
+                        <td scope="col">두번째 게시글 입니다.</td>
+                        <td scope="col">이태화</td>
+                        <td scope="col">2022.04.25</td>
+                    </tr>
+                    <tr id="1" class="fastcampus">
+                        <td scope="col">1</td>
+                        <td scope="col">첫번째 게시글 입니다.</td>
+                        <td scope="col">이태화</td>
+                        <td scope="col">2022.04.25</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
