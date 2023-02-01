@@ -1,8 +1,7 @@
-import math
 import datetime
 from flask_pymongo import PyMongo
 from flask import Flask, render_template, request, redirect
-#
+
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/local"
 mongo = PyMongo(app)
@@ -25,23 +24,9 @@ def index():
     wedding = datetime.datetime(2022, 6, 18, 0, 0, 0)
     diff = (wedding - now).days
 
-    page = int(request.args.get('page', 1))
-    limit = 3
-    skip = (page - 1) * limit
+    guestbooks = mongo.db['wedding'].find()
 
-    count = mongo.db['wedding'].count_documents({})
-    max_page = math.ceil(count / limit)
-
-    pages = range(1, max_page + 1)
-
-    guestbooks = mongo.db['wedding'].find().limit(limit).skip(skip)
-
-    return render_template(
-        'index.html',
-        diff=diff,
-        guestbooks=guestbooks,
-        pages=pages
-    )
+    return render_template('index.html', diff=diff, guestbooks=guestbooks)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port='80')
