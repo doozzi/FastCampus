@@ -1,6 +1,12 @@
 import requests
 from bs4 import BeautifulSoup 
+from pymongo.mongo_client import MongoClient
 
+client = MongoClient('mongodb://localhost:27017')
+db = client.local
+
+# 데이터 수집 
+"""
 res = requests.get("https://www.yes24.com/24/Category/BestSeller")
 soup = BeautifulSoup(res.text, "html.parser")
 
@@ -14,4 +20,15 @@ for i in range(40):
 
     sstr = "#bestList > ol > li.num" + idx + " > p:nth-child(3) > a"
     ts = soup.select_one(sstr)
-    print(ts.text)
+    
+    db['yes24'].insert_one({
+           'Title': ts.text
+    })
+"""
+
+# 데이터 조회 
+collection = db.yes24
+
+rows = collection.find()
+for row in rows:
+    print(row)
