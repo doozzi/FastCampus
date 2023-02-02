@@ -1,4 +1,4 @@
-<p align="center" style="font:bold">
+<p align="center" style="font:bold; font-size:1.5em">
 	fastcampus (2022.12.28 ~ 2023.02.02)
 </p>
 <br>
@@ -17,10 +17,10 @@
 	<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=Bootstrap&logoColor=white" />
 </div>
 <br>
-<div>
+<div align="center">
 	🛠️ <p style="font:bold"> Tools </p> 🛠️
 <div>
-<div>
+<div align="center">
 	<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat&logo=Visual Studio Code&logoColor=white" />
 	<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white" />
 	<img src="https://img.shields.io/badge/Flask-000000?style=flat&logo=Flask&logoColor=white" />
